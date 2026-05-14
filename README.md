@@ -30,9 +30,11 @@
    √ Would you like to include AGENTS.md to guide coding agents to write up-to-date Next.js code? ... No / Yes
 
 3. add this line under scripts in package.json
+
    "create-folders": "node folders.cjs"
 
 4. Add module folder structure as per your requirement in folders.cjs like below-
+
    const modules = ["shop", "auth", "hotels", "flights", "experiences", "admin", "account"];
 
 5. npm run create-folders
