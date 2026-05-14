@@ -32,4 +32,19 @@
 3. add this line under scripts in package.json
    "create-folders": "node folders.cjs"
 
-4. Now install all the dependencies which are required.
+4. Add module folder structure as per your requirement in folders.cjs like below-
+   const modules = ["shop", "auth", "hotels", "flights", "experiences", "admin", "account"];
+
+5. npm run create-folders
+
+6. Now install all the dependencies which are required.
+
+7. npm install zustand
+
+8. npx shadcn@latest init
+
+9. npm install react-hook-form
+
+10. npm install zod
+
+11. npm install @hookform/resolvers
