@@ -182,7 +182,7 @@ const globalFiles = [
   },
   {
     path: "src/app/layout.tsx",
-    overwrite: true,
+    overwrite: false,
     content: `import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { roboto } from "@/assets/fonts/fonts";
