@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 const askQuestion = (query) => new Promise((resolve) => rl.question(query, resolve));
 
-const modules = ["shop", "auth", "hotels", "flights", "experiences", "admin", "account"];
+const modules = ["shop", "auth", "admin", "account"];
 
 const directories = [
   "src/app",
@@ -57,13 +57,13 @@ const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 // Build routes.ts content dynamically
 const routesContent = `export const ROUTES = {
   base: "/",
-  shop: "/shop",
+  ${modules[0]}: "/${modules[0]}",
 };
 
 ${modules
   .map((m) => {
     const mUpper = m.toUpperCase();
-    const basePath = m === "shop" ? "/" : `/${m}`;
+    const basePath = m === modules[0] ? "/" : `/${m}`;
     return `export const ${mUpper}_ROUTES = {\n  base: "${basePath}",\n  ${m}: "/${m}",\n};`;
   })
   .join("\n\n")}
@@ -122,7 +122,7 @@ const globalFiles = [
     logout: "/auth/logout",
     me: "/auth/me",
   },
-  shop: {
+  ${modules[0]}: {
     products: {
       getAllProducts: "/product/getAllProducts",
       getFlatProducts: "/product/getFlatProducts?limit=3&page=1",
