@@ -1,13 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const readline = require("readline");
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-const askQuestion = (query) => new Promise((resolve) => rl.question(query, resolve));
 
 const modules = ["home", "auth", "admin", "account", "library"];
 
@@ -692,7 +684,7 @@ const run = async () => {
       },
       {
         path: `src/app/(${module})/_modules/store/${module}.store.ts`,
-        content: `import { create } from 'zustand';\n\ninterface ${modUpper}State {\n  // Define state types\n}\n\nexport const use${modUpper}Store = create<${modUpper}State>(() => ({\n  // Define initial state\n}));\n`,
+        content: `import { create } from "zustand";\n\ninterface ${modUpper}State {\n  demo: string;\n}\n\nexport const use${modUpper}Store = create<${modUpper}State>(() => ({\n  demo: "",\n}));\n`,
       },
       {
         path: `src/app/(${module})/_modules/types/${module}.types.ts`,
@@ -737,7 +729,6 @@ const run = async () => {
   }
 
   console.log("\n✨ Next.js Folder structure is synchronized and ready!");
-  rl.close();
   process.exit(0);
 };
 

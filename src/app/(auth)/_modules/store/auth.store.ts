@@ -1,9 +1,9 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface AuthState {
-  // Define state types
+  demo: string;
 }
 
 export const useAuthStore = create<AuthState>(() => ({
-  // Define initial state
+  demo: "",
 }));

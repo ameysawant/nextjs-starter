@@ -1,9 +1,9 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface LibraryState {
-  // Define state types
+  demo: string;
 }
 
 export const useLibraryStore = create<LibraryState>(() => ({
-  // Define initial state
+  demo: "",
 }));

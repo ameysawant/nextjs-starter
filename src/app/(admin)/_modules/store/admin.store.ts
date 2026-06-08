@@ -1,9 +1,9 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface AdminState {
-  // Define state types
+  demo: string;
 }
 
 export const useAdminStore = create<AdminState>(() => ({
-  // Define initial state
+  demo: "",
 }));
