@@ -1,4 +1,3 @@
-// app/fonts.ts
 import localFont from "next/font/local";
 
 export const roboto = localFont({
@@ -49,9 +48,7 @@ export const roboto = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-roboto",
+  variable: "--font-sans",
   display: "swap",
   fallback: ["system-ui", "Arial", "sans-serif"],
 });
-
-// No fontMono - remove it entirely
