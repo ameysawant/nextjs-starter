@@ -73,6 +73,10 @@ npx shadcn@latest init
   },
 
   2. After this when you install any component from Shadcn then don't forget to add the correct path import { cn } from "@/shared/utils/utils";
+  
+  3. When you install calendar from shadcn then edit as below:
+      // @ts-expect-error - 'table' is a valid key in react-day-picker's classNames but TypeScript types are outdated
+      table: "w-full border-collapse",
 
 
 ## Install react-hook-form

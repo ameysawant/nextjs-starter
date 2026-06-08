@@ -372,7 +372,7 @@ const globalFiles = [
   {
     path: "src/config/configuration.ts",
     content:
-      'export const configuration = {\n  api: {\n    baseUrl:\n      process.env.API_BASE_URL || "http://localhost:9000/rajeshbeej/api",\n  },\n};\n',
+      'export const configuration = {\n  apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000",\n};\n',
   },
   {
     path: "src/lib/api/apiClient.ts",
@@ -401,7 +401,7 @@ const globalFiles = [
       "  };",
       "",
       "  try {",
-      "    const response = await fetch(`${config.api.baseUrl}${url}`, requestInit);",
+      "    const response = await fetch(`${config.apiUrl}${url}`, requestInit);",
       "",
       "    try {",
       "      const payload = (await response.json()) as ApiResponse<T>;",
@@ -420,8 +420,7 @@ const globalFiles = [
       "  } catch {",
       "    return {",
       "      isSuccessful: false,",
-      '      exceptionMessage:',
-      '        "Unable to connect to the server. Please check your network connection or try again later.",',
+      '      exceptionMessage: "Unable to connect to the server. Please check your network connection or try again later.",',
       "      result: null,",
       "      statusCode: 0,",
       "    };",
@@ -452,8 +451,18 @@ const globalFiles = [
   },
   {
     path: "src/lib/api-helpers/api-helpers.ts",
-    content:
-      'export const apiHelpers = {\n  handleError: (error: unknown) => {\n    console.error("API Error:", error);\n  },\n};\n',
+    content: "export const apiHelpers = {};\n",
+  },
+  {
+    path: "src/shared/utils/utils.ts",
+    content: [
+      'import { clsx, type ClassValue } from "clsx";',
+      'import { twMerge } from "tailwind-merge";',
+      "",
+      "export function cn(...inputs: ClassValue[]) {",
+      "  return twMerge(clsx(inputs));",
+      "}",
+    ].join("\n"),
   },
   {
     path: "src/shared/components/feedback/Loading.tsx",

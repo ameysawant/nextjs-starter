@@ -22,7 +22,7 @@ export const apiClient = async <T = unknown>(params: ApiClientRequest): Promise<
   };
 
   try {
-    const response = await fetch(`${config.api.baseUrl}${url}`, requestInit);
+    const response = await fetch(`${config.apiUrl}${url}`, requestInit);
 
     try {
       const payload = (await response.json()) as ApiResponse<T>;
@@ -41,8 +41,7 @@ export const apiClient = async <T = unknown>(params: ApiClientRequest): Promise<
   } catch {
     return {
       isSuccessful: false,
-      exceptionMessage:
-        "Unable to connect to the server. Please check your network connection or try again later.",
+      exceptionMessage: "Unable to connect to the server. Please check your network connection or try again later.",
       result: null,
       statusCode: 0,
     };

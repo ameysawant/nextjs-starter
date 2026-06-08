@@ -96,7 +96,7 @@ This scaffolds the modular folder structure, shared constants, API helpers, and 
 
 ## 6. Install all dependencies
 
-Install all remaining dependencies required for the project.
+Now install all the dependencies which are required.
 
 ---
 
@@ -114,7 +114,7 @@ npm install zustand
 npx shadcn@latest init
 ```
 
-After you install shadcn `delete` `components/ui` folder and move `lib/utils.ts` file to `shared/utils/utils.ts` and then in `component.json` replace `aliases` block with:
+1. After you install shadcn, delete `components/ui` folder and move `lib/utils.ts` file to `shared/utils/utils.ts`, then in `components.json` replace the `aliases` block with:
 
 ```json
 "aliases": {
@@ -126,7 +126,18 @@ After you install shadcn `delete` `components/ui` folder and move `lib/utils.ts`
 }
 ```
 
-After this when you install any component from Shadcn then don't forget to add the correct path `import { cn } from "@/shared/utils/utils";`
+2. After this, when you install any component from Shadcn, don't forget to add the correct path:
+
+```ts
+import { cn } from "@/shared/utils/utils";
+```
+
+3. When you install `calendar` from shadcn, edit as below:
+
+```ts
+// @ts-expect-error - 'table' is a valid key in react-day-picker's classNames but TypeScript types are outdated
+table: "w-full border-collapse",
+```
 
 ---
 

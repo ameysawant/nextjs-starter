@@ -22,3 +22,8 @@ export const ACCOUNT_ROUTES = {
   base: "/account",
   account: "/account",
 };
+
+export const LIBRARY_ROUTES = {
+  base: "/library",
+  library: "/library",
+};

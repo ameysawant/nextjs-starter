@@ -9,7 +9,7 @@ export const ENDPOINTS = {
     logout: "/auth/logout",
     me: "/auth/me",
   },
-  shop: {
+  home: {
     products: {
       getAllProducts: "/product/getAllProducts",
       getFlatProducts: "/product/getFlatProducts?limit=3&page=1",

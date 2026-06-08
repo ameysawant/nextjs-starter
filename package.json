@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "create-folders": "node folders.cjs"
+    "create-folders": "node folders.cjs",
+    "shadcn:add-all": "npx shadcn@latest add accordion badge breadcrumb button button-group calendar card checkbox dialog direction dropdown-menu input input-group input-otp label pagination popover radio-group select separator sheet slider sonner spinner switch table tabs textarea tooltip -y"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
