@@ -18,6 +18,7 @@ const directories = [
   "src/lib/api",
   "src/lib/api-helpers",
   "src/shared/assets/fonts",
+  "src/shared/assets/fonts/roboto",
   "src/shared/assets/images",
   "src/shared/components/custom-ui",
   "src/shared/components/feedback",
@@ -262,16 +263,77 @@ const globalFiles = [
     content: "/* Add reusable utility classes here */\n",
   },
   {
+    path: "src/shared/assets/fonts/fonts.ts",
+    content: [
+      'import localFont from "next/font/local";',
+      "",
+      "export const roboto = localFont({",
+      "  src: [",
+      "    {",
+      '      path: "./roboto/Roboto-Thin.ttf",',
+      '      weight: "100",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-ExtraLight.ttf",',
+      '      weight: "200",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-Light.ttf",',
+      '      weight: "300",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-Regular.ttf",',
+      '      weight: "400",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-Medium.ttf",',
+      '      weight: "500",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-SemiBold.ttf",',
+      '      weight: "600",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-Bold.ttf",',
+      '      weight: "700",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-ExtraBold.ttf",',
+      '      weight: "800",',
+      '      style: "normal",',
+      "    },",
+      "    {",
+      '      path: "./roboto/Roboto-Black.ttf",',
+      '      weight: "900",',
+      '      style: "normal",',
+      "    },",
+      "  ],",
+      '  variable: "--font-sans",',
+      '  display: "swap",',
+      '  fallback: ["system-ui", "Arial", "sans-serif"],',
+      "});",
+    ].join("\n"),
+  },
+  {
     path: "src/app/layout.tsx",
     content: `import type { Metadata } from "next";
 import "@/shared/styles/globals.css";
 import { roboto } from "@/shared/assets/fonts/fonts";
 import { cn } from "@/shared/utils/utils";
+import { TooltipProvider } from "@/shared/components/shadcn-ui/tooltip";
+import { Toaster } from "@/shared/components/shadcn-ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Company name | All Services",
-  description: "Company name is a leading provider of all services",
-  keywords: "Company name, All Services",
+  title: "Next.js Starter",
+  description: "Next.js Starter is a scalable and modular starter kit for Next.js projects",
+  keywords: "nextjs starter, all services",
 };
 
 export default function RootLayout({
@@ -281,7 +343,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn(roboto.variable, "font-sans")}>
-      <body className="bg-background text-foreground">{children}</body>
+      <body className="body bg-background text-foreground">
+        <TooltipProvider>
+          <Toaster />
+          {children}
+        </TooltipProvider>
+      </body>
     </html>
   );
 }
