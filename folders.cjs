@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 const askQuestion = (query) => new Promise((resolve) => rl.question(query, resolve));
 
-const modules = ["home", "auth", "admin", "account"];
+const modules = ["home", "auth", "admin", "account", "library"];
 
 const directories = [
   "src/app",
@@ -17,15 +17,16 @@ const directories = [
   "src/lib",
   "src/lib/api",
   "src/lib/api-helpers",
-  "src/assets/logos",
-  "src/assets/fonts",
+  "src/shared/assets/fonts",
+  "src/shared/assets/images",
+  "src/shared/components/custom-ui",
   "src/shared/components/feedback",
   "src/shared/components/shadcn-ui",
   "src/shared/components/skeleton",
   "src/shared/constants",
   "src/shared/hooks",
   "src/shared/store",
-  "src/styles",
+  "src/shared/styles",
   "src/shared/types",
   "src/shared/utils",
   // Module directories
@@ -43,12 +44,23 @@ const directories = [
   ]),
 ];
 
+const writeFileIfMissing = (filePath, content, label = "global file") => {
+  const fullPath = path.join(process.cwd(), filePath);
+  if (fs.existsSync(fullPath)) return false;
+
+  fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+  fs.writeFileSync(fullPath, content);
+  console.log(`📝 Created ${label}: ${filePath}`);
+  return true;
+};
+
 // Create Directories
 const createDirectories = () => {
   directories.forEach((dir) => {
     const fullPath = path.join(process.cwd(), dir);
     if (!fs.existsSync(fullPath)) {
       fs.mkdirSync(fullPath, { recursive: true });
+      console.log(`📁 Created directory: ${dir}`);
     }
   });
 };
@@ -241,22 +253,20 @@ const globalFiles = [
 `,
   },
   {
-    path: "src/styles/globals.css",
-    overwrite: false,
+    path: "src/shared/styles/globals.css",
     content:
-      "@import \"tailwindcss\";\n\n:root {\n  --background: #ffffff;\n  --foreground: #0f172a;\n}\n\nbody {\n  background-color: var(--background);\n  color: var(--foreground);\n  font-family: 'Inter', sans-serif;\n}\n",
+      '@import "tailwindcss";\n@import "./reusable.css";\n\n:root {\n  --background: #ffffff;\n  --foreground: #0f172a;\n}\n\nbody {\n  background-color: var(--background);\n  color: var(--foreground);\n}\n',
   },
   {
-    path: "src/styles/colors.css",
-    overwrite: false,
-    content: ":root {\n  --primary: #3b82f6;\n}\n",
+    path: "src/shared/styles/reusable.css",
+    content: "/* Add reusable utility classes here */\n",
   },
   {
     path: "src/app/layout.tsx",
-    overwrite: false,
     content: `import type { Metadata } from "next";
-import "@/styles/globals.css";
-import { roboto } from "@/assets/fonts/fonts";
+import "@/shared/styles/globals.css";
+import { roboto } from "@/shared/assets/fonts/fonts";
+import { cn } from "@/shared/utils/utils";
 
 export const metadata: Metadata = {
   title: "Company name | All Services",
@@ -270,7 +280,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={\`\${roboto.variable}\`}>
+    <html lang="en" className={cn(roboto.variable, "font-sans")}>
       <body className="bg-background text-foreground">{children}</body>
     </html>
   );
@@ -290,21 +300,9 @@ const run = async () => {
 
   createDirectories();
 
-  // Create Global Files
+  // Create Global Files (only when missing)
   for (const file of globalFiles) {
-    const fullPath = path.join(process.cwd(), file.path);
-    const exists = fs.existsSync(fullPath);
-
-    if (!exists || file.overwrite) {
-      fs.writeFileSync(fullPath, file.content);
-      if (!exists) {
-        console.log(`📝 Created global file: ${file.path}`);
-      } else {
-        console.log(`🔄 Replaced global file: ${file.path}`);
-      }
-    } else {
-      // console.log(`⏭️  Skipping existing global file: ${file.path}`);
-    }
+    writeFileIfMissing(file.path, file.content);
   }
 
   // Create Boilerplate Files for each module
@@ -367,12 +365,7 @@ const run = async () => {
     }
 
     files.forEach((file) => {
-      const fullPath = path.join(process.cwd(), file.path);
-      const exists = fs.existsSync(fullPath);
-      if (!exists) {
-        fs.writeFileSync(fullPath, file.content);
-        console.log(`📝 Created module file: ${file.path}`);
-      }
+      writeFileIfMissing(file.path, file.content, "module file");
     });
   });
 

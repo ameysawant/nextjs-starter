@@ -6,9 +6,9 @@ import { TooltipProvider } from "@/shared/components/shadcn-ui/tooltip";
 import { Toaster } from "@/shared/components/shadcn-ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Company name | All Services",
-  description: "Company name is a leading provider of all services",
-  keywords: "Company name, All Services",
+  title: "Next.js Starter",
+  description: "Next.js Starter is a scalable and modular starter kit for Next.js projects",
+  keywords: "nextjs starter, all services",
 };
 
 export default function RootLayout({
