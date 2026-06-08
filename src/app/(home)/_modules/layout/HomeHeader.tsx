@@ -1,5 +1,15 @@
+import { Container, Row, Col } from "@/shared/components/flexbox-grid/Index";
+
 const HomeHeader = () => {
-  return <header>Home Header</header>;
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col>Home Header</Col>
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default HomeHeader;
