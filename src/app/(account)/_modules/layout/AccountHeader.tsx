@@ -1,5 +1,15 @@
+import { Container, Row, Col } from "@/shared/components/flexbox-grid/Index";
+
 const AccountHeader = () => {
-  return <header>Account Header</header>;
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col>Account Header</Col>
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default AccountHeader;

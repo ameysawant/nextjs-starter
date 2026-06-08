@@ -1,5 +1,15 @@
+import { Container, Row, Col } from "@/shared/components/flexbox-grid/Index";
+
 const AuthComponent = () => {
-  return <div>Auth Component</div>;
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col>Auth Component</Col>
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default AuthComponent;

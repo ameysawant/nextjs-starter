@@ -86,6 +86,20 @@ const ${componentName} = () => {
 export default ${componentName};
 `;
 
+const moduleLayoutTemplate = (module, modUpper) => `import ${modUpper}Header from "@/app/(${module})/_modules/layout/${modUpper}Header";
+import ${modUpper}Footer from "@/app/(${module})/_modules/layout/${modUpper}Footer";
+
+export default function ${modUpper}Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <${modUpper}Header />
+      <main>{children}</main>
+      <${modUpper}Footer />
+    </>
+  );
+}
+`;
+
 const flexboxGridFiles = [
   {
     path: "src/shared/components/flexbox-grid/grid-config.ts",
@@ -685,7 +699,7 @@ const run = async () => {
       },
       {
         path: `src/app/(${module})/layout.tsx`,
-        content: `import ${modUpper}Header from "@/app/(${module})/_modules/layout/${modUpper}Header";\nimport ${modUpper}Footer from "@/app/(${module})/_modules/layout/${modUpper}Footer";\n\nexport default function ${modUpper}Layout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <section>\n      <${modUpper}Header />\n      <main>{children}</main>\n      <${modUpper}Footer />\n    </section>\n  );\n}\n`,
+        content: moduleLayoutTemplate(module, modUpper),
       },
       {
         path: `src/app/(${module})/${module}/page.tsx`,
