@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 const askQuestion = (query) => new Promise((resolve) => rl.question(query, resolve));
 
-const modules = ["shop", "auth", "admin", "account"];
+const modules = ["home", "auth", "admin", "account"];
 
 const directories = [
   "src/app",
@@ -175,6 +175,10 @@ const globalFiles = [
   {
     path: "src/shared/constants/routes.ts",
     content: routesContent,
+  },
+  {
+    path: "src/shared/constants/componentNames.ts",
+    content: "export const COMPONENT_NAMES = {};\n",
   },
   {
     path: "src/shared/constants/endpoints.ts",

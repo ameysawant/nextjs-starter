@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
-import { roboto } from "@/assets/fonts/fonts";
+import "@/shared/styles/globals.css";
+import { roboto } from "@/shared/assets/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Company name | All Services",

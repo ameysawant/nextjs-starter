@@ -1,6 +1,11 @@
-1. npx create-next-app@latest
 
-2. choose below -
+## Install Next.js
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npx create-next-app@latest
+
+
+## Choose Below
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
    Would you like to use the recommended Next.js defaults?
 
    Yes, use recommended defaults - TypeScript, ESLint, Tailwind CSS, App Router, AGENTS.md
@@ -29,22 +34,46 @@
 
    √ Would you like to include AGENTS.md to guide coding agents to write up-to-date Next.js code? ... No / Yes
 
-3. add this line under scripts in package.json
-   "create-folders": "node folders.cjs"
+## Add script to package.json
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+"create-folders": "node folders.cjs"
 
-4. Add module folder structure as per your requirement in folders.cjs like below-
-   const modules = ["shop", "auth", "hotels", "flights", "experiences", "admin", "account"];
 
-5. npm run create-folders
+## Add module folder structure in folders.cjs
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+const modules = ["home", "shop", "auth", "admin", "account"];
 
-6. Now install all the dependencies which are required.
 
-7. npm install zustand
+## Run create-folders
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npm run create-folders
 
-8. npx shadcn@latest init
 
-9. npm install react-hook-form
+## Install all dependencies
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Now install all the dependencies which are required.
 
-10. npm install zod
 
-11. npm install @hookform/resolvers
+## Install zustand
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npm install zustand
+
+
+## Init shadcn
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npx shadcn@latest init
+
+
+## Install react-hook-form
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npm install react-hook-form
+
+
+## Install zod
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npm install zod
+
+
+## Install @hookform/resolvers
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npm install @hookform/resolvers

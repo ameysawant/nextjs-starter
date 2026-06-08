@@ -1,52 +1,149 @@
-1. npx create-next-app@latest
+# Next.js Starter
 
-2. choose below -
-   Would you like to use the recommended Next.js defaults?
+A modular Next.js starter with a scalable folder structure, shared utilities, and a `create-folders` script to scaffold modules automatically.
 
-   Yes, use recommended defaults - TypeScript, ESLint, Tailwind CSS, App Router, AGENTS.md
+---
 
-   No, reuse previous settings
+## Table of Contents
 
-   ❯ No, customize settings - Choose your own preferences
+1. [Install Next.js](#1-install-nextjs)
+2. [Choose Below](#2-choose-below)
+3. [Add script to package.json](#3-add-script-to-packagejson)
+4. [Add module folder structure in folders.cjs](#4-add-module-folder-structure-in-folderscjs)
+5. [Run create-folders](#5-run-create-folders)
+6. [Install all dependencies](#6-install-all-dependencies)
+7. [Install zustand](#7-install-zustand)
+8. [Init shadcn](#8-init-shadcn)
+9. [Install react-hook-form](#9-install-react-hook-form)
+10. [Install zod](#10-install-zod)
+11. [Install @hookform/resolvers](#11-install-hookformresolvers)
 
-   √ What is your project named? ... .
+---
 
-   √ Would you like to use the recommended Next.js defaults? » No, customize settings
+## 1. Install Next.js
 
-   √ Would you like to use TypeScript? ... No / Yes
+```bash
+npx create-next-app@latest
+```
 
-   √ Which linter would you like to use? » ESLint
+---
 
-   √ Would you like to use React Compiler? ... No / Yes
+## 2. Choose Below
 
-   √ Would you like to use Tailwind CSS? ... No / Yes
+When prompted, use these options:
 
-   √ Would you like your code inside a `src/` directory? ... No / Yes
+```
+Would you like to use the recommended Next.js defaults?
 
-   √ Would you like to use App Router? (recommended) ... No / Yes
+  Yes, use recommended defaults - TypeScript, ESLint, Tailwind CSS, App Router, AGENTS.md
 
-   √ Would you like to customize the import alias (`@/*` by default)? ... No / Yes
+  No, reuse previous settings
 
-   √ Would you like to include AGENTS.md to guide coding agents to write up-to-date Next.js code? ... No / Yes
+❯ No, customize settings - Choose your own preferences
 
-3. add this line under scripts in package.json
+√ What is your project named? ... .
 
-   "create-folders": "node folders.cjs"
+√ Would you like to use the recommended Next.js defaults? » No, customize settings
 
-4. Add module folder structure as per your requirement in folders.cjs like below-
+√ Would you like to use TypeScript? ... No / Yes
 
-   const modules = ["shop", "auth", "hotels", "flights", "experiences", "admin", "account"];
+√ Which linter would you like to use? » ESLint
 
-5. npm run create-folders
+√ Would you like to use React Compiler? ... No / Yes
 
-6. Now install all the dependencies which are required.
+√ Would you like to use Tailwind CSS? ... No / Yes
 
-7. npm install zustand
+√ Would you like your code inside a `src/` directory? ... No / Yes
 
-8. npx shadcn@latest init
+√ Would you like to use App Router? (recommended) ... No / Yes
 
-9. npm install react-hook-form
+√ Would you like to customize the import alias (`@/*` by default)? ... No / Yes
 
-10. npm install zod
+√ Would you like to include AGENTS.md to guide coding agents to write up-to-date Next.js code? ... No / Yes
+```
 
-11. npm install @hookform/resolvers
+---
+
+## 3. Add script to package.json
+
+Add this line under `scripts` in `package.json`:
+
+```json
+"create-folders": "node folders.cjs"
+```
+
+---
+
+## 4. Add module folder structure in folders.cjs
+
+Update the `modules` array in `folders.cjs` as per your requirement:
+
+```js
+const modules = ["home", "shop", "auth", "admin", "account"];
+```
+
+---
+
+## 5. Run create-folders
+
+```bash
+npm run create-folders
+```
+
+This scaffolds the modular folder structure, shared constants, API helpers, and boilerplate files for each module.
+
+---
+
+## 6. Install all dependencies
+
+Install all remaining dependencies required for the project.
+
+---
+
+## 7. Install zustand
+
+```bash
+npm install zustand
+```
+
+---
+
+## 8. Init shadcn
+
+```bash
+npx shadcn@latest init
+```
+
+---
+
+## 9. Install react-hook-form
+
+```bash
+npm install react-hook-form
+```
+
+---
+
+## 10. Install zod
+
+```bash
+npm install zod
+```
+
+---
+
+## 11. Install @hookform/resolvers
+
+```bash
+npm install @hookform/resolvers
+```
+
+---
+
+## Quick Start (after setup)
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
