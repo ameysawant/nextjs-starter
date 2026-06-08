@@ -108,7 +108,7 @@ npm install zustand
 
 ---
 
-## 8. Init shadcn
+## 8. Install shadcn
 
 ```bash
 npx shadcn@latest init
