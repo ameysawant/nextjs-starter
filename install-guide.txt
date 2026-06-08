@@ -63,6 +63,17 @@ npm install zustand
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 npx shadcn@latest init
 
+1. after you install shadcn delete components/ui folder and move lib/utils.ts file to shared/utils/utils.ts and then in component.json replace below code:
+  "aliases": {
+    "components": "@/shared/components",
+    "utils": "@/shared/utils",
+    "ui": "@/shared/components/shadcn-ui",
+    "lib": "@/shared/utils",
+    "hooks": "@/hooks"
+  },
+
+  2. After this when you install any component from Shadcn then don't forget to add the correct path import { cn } from "@/shared/utils/utils";
+
 
 ## Install react-hook-form
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
