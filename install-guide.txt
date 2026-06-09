@@ -59,6 +59,11 @@ Now install all the dependencies which are required.
 npm install zustand
 
 
+## Install react icons
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+npm install react-icons
+
+
 ## Init shadcn
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 npx shadcn@latest init

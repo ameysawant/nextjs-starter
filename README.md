@@ -108,7 +108,15 @@ npm install zustand
 
 ---
 
-## 8. Install shadcn
+## 8. Install react icons
+
+```bash
+npm install react-icons
+```
+
+---
+
+## 9. Install shadcn
 
 ```bash
 npx shadcn@latest init
@@ -141,7 +149,7 @@ table: "w-full border-collapse",
 
 ---
 
-## 9. Install react-hook-form
+## 10. Install react-hook-form
 
 ```bash
 npm install react-hook-form
@@ -149,7 +157,7 @@ npm install react-hook-form
 
 ---
 
-## 10. Install zod
+## 11. Install zod
 
 ```bash
 npm install zod
@@ -157,7 +165,7 @@ npm install zod
 
 ---
 
-## 11. Install @hookform/resolvers
+## 12. Install @hookform/resolvers
 
 ```bash
 npm install @hookform/resolvers

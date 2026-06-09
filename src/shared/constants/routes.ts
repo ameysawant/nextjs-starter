@@ -26,4 +26,9 @@ export const ACCOUNT_ROUTES = {
 export const LIBRARY_ROUTES = {
   base: "/library",
   library: "/library",
+  centeredModal: "/library/centered-modal",
+  scrollableModal: "/library/scrollable-modal",
+  dropdown: "/library/nested-dropdown",
+  nestedAccordion: "/library/nested-accordion",
+  selectMenu: "/library/select-menu",
 };

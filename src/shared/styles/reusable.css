@@ -131,6 +131,27 @@
   }
   /*-------------------------- -- SCROLLBAR -- --------------------------*/
 
+  /*-------------------------- -- ACCORDION ANIMATIONS -- --------------------------*/
+  /* Grid-based accordion keyframes: animates open/close while allowing nested content to grow */
+  @keyframes accordion-down {
+    from {
+      grid-template-rows: 0fr;
+    }
+    to {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      grid-template-rows: 1fr;
+    }
+    to {
+      grid-template-rows: 0fr;
+    }
+  }
+  /*-------------------------- -- ACCORDION ANIMATIONS -- --------------------------*/
+
   /*-------------------------- -- MEDIA QUERIES -- --------------------------*/
   @media (min-width: 576px) {
     .swiper-button-prev,

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "create-folders": "node folders.cjs",
-    "shadcn:add-all": "npx shadcn@latest add accordion badge breadcrumb button button-group calendar card checkbox dialog direction dropdown-menu input input-group input-otp label pagination popover radio-group select separator sheet slider sonner spinner switch table tabs textarea tooltip -y"
+    "shadcn:add-all": "npx shadcn@latest add accordion collapsible badge breadcrumb button button-group calendar card checkbox dialog direction dropdown-menu input input-group input-otp label pagination popover radio-group select separator sheet slider sonner spinner switch table tabs textarea tooltip -y"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -24,6 +24,7 @@
     "react-day-picker": "^10.0.1",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.78.0",
+    "react-icons": "^5.6.0",
     "shadcn": "^4.10.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.6.0",
