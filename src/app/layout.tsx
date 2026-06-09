@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import "@/shared/styles/globals.css";
 import { roboto } from "@/shared/assets/fonts/fonts";
 import { cn } from "@/shared/utils/utils";
+import ThemeProvider from "@/shared/components/custom-ui/ThemeProvider";
 import { TooltipProvider } from "@/shared/components/shadcn-ui/tooltip";
 import { Toaster } from "@/shared/components/shadcn-ui/sonner";
 
@@ -11,18 +13,22 @@ export const metadata: Metadata = {
   keywords: "nextjs starter, all services",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const darkMode = (await cookies()).get("theme")?.value === "dark";
+
   return (
-    <html lang="en" className={cn(roboto.variable, "font-sans")}>
+    <html lang="en" className={cn(roboto.variable, "font-sans", darkMode && "dark")}>
       <body className="body bg-background text-foreground">
-        <TooltipProvider>
-          <Toaster />
-          {children}
-        </TooltipProvider>
+        <ThemeProvider darkMode={darkMode}>
+          <TooltipProvider>
+            <Toaster />
+            {children}
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
