@@ -1,6 +1,6 @@
 import { H2, H5 } from "@/shared/components/custom-ui/Typography";
 import SelectMenu from "@/shared/components/custom-ui/SelectMenu";
-import CodeSnippet from "@/shared/components/custom-ui/CodeSnippet";
+import CodeSnippet from "@/shared/components/code/CodeSnippet";
 
 const items = [
   { label: "Option 1", value: "option1" },

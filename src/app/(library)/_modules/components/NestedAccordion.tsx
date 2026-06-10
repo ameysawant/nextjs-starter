@@ -1,5 +1,5 @@
 import Accordions, { type AccordionIconType, type AccordionNode } from "@/shared/components/custom-ui/Accordions";
-import CodeSnippet from "@/shared/components/custom-ui/CodeSnippet";
+import CodeSnippet from "@/shared/components/code/CodeSnippet";
 import { H2, H5 } from "@/shared/components/custom-ui/Typography";
 
 const accordionItems: AccordionNode[] = [

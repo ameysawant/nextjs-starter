@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import "@/shared/styles/globals.css";
 import { roboto } from "@/shared/assets/fonts/fonts";
 import { cn } from "@/shared/utils/utils";
-import ThemeProvider from "@/shared/components/custom-ui/ThemeProvider";
+import ThemeProvider from "@/shared/components/theme/ThemeProvider";
 import { TooltipProvider } from "@/shared/components/shadcn-ui/tooltip";
 import { Toaster } from "@/shared/components/shadcn-ui/sonner";
 

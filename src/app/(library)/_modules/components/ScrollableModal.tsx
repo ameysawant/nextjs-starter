@@ -1,5 +1,5 @@
 import Modal from "@/shared/components/custom-ui/Modal";
-import CodeSnippet from "@/shared/components/custom-ui/CodeSnippet";
+import CodeSnippet from "@/shared/components/code/CodeSnippet";
 import { Button } from "@/shared/components/shadcn-ui/button";
 import { H2, H5, P } from "@/shared/components/custom-ui/Typography";
 

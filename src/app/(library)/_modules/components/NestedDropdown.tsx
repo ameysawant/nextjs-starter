@@ -1,5 +1,5 @@
 import Dropdown, { type DropdownItem } from "@/shared/components/custom-ui/Dropdown";
-import CodeSnippet from "@/shared/components/custom-ui/CodeSnippet";
+import CodeSnippet from "@/shared/components/code/CodeSnippet";
 import { Button } from "@/shared/components/shadcn-ui/button";
 import { H2, H5 } from "@/shared/components/custom-ui/Typography";
 
@@ -61,7 +61,7 @@ const NestedDropdown = () => {
       <ul className="list-disc list-inside mb-4 text-gray-400">
         <li>trigger: React.ReactNode</li>
         <li>items: array (label, onSelect?, disabled?, variant?, children?)</li>
-        <li>align: "end" aligns menu to the right; nested submenus open to the left</li>
+        <li>{`align: "end" aligns menu to the right; nested submenus open to the left`}</li>
         <li>openOnHover: boolean (optional, default false = click)</li>
       </ul>
 
